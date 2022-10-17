@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  realm-dev:
+    container_name: realm_dev_1
+    image: bpmgenesis/portal:1.0
+    ports:
+      - "5050:5050"
+    environment:
+      db_type: local
+      gateway_url: http://tuvalapi.com
+      realmmanager_broker: http://realmmanager-broker:5003/v1
+  realmmanager-broker:
+    image: bpmgenesis/realm-broker:1.0
+    environment:
+      db_type: local
