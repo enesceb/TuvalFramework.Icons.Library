@@ -1,6 +1,7 @@
 import { int } from '@tuval/core';
 import { bindState, cLeading, CornerRadiusTypes, cTop, ForEach, HStack, Icon, Text, VStack, Color, TextField, IconLibrary } from '@tuval/forms';
 
+
 export namespace Views {
     export const SearchBar = (text: string, action: Function) =>
     HStack({ spacing: 5 })(

@@ -8,7 +8,7 @@
         "wbuild": "webpack",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "",
+    "author": "Enes ÇEB",
     "license": "ISC",
     "devDependencies": {
         "@tuval/cg": "^0.0.16",
