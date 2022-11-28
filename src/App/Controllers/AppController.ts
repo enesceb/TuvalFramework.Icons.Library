@@ -15,6 +15,7 @@ import {
     UIScene,
     VStack,
 } from '@tuval/forms';
+import { DropdownListClass, UIDropdownListView } from "@realmocean/dropdowns"
 import { IconData } from '../../Resources/IconData/IconData';
 
 import { Views } from '../../Resources/Views/Views';
@@ -38,7 +39,7 @@ export class AppController extends UIController {
     private icons: TuvalIcons[] = IconData;
 
     @State()
-    private showingIcons: any[];
+    private showingIcons: TuvalIcons[];
 
     protected BindRouterParams() {
         this.showingIcons = this.icons;
@@ -74,7 +75,15 @@ export class AppController extends UIController {
                 HStack(Text(''))
                     .height('0.1rem')
                     .background("linear-gradient(90deg, rgb(100, 91, 83) 0%, rgb(235, 82, 82) 18.23%, rgb(247, 143, 47) 34.37%, rgb(244, 193, 81) 48.96%, rgb(82, 187, 118) 66.15%, rgb(38, 165, 215) 82.29%, rgb(224, 105, 183) 100%)"),
-                Views.SearchBar("Search Icons", value => this.Search("name", value)),
+                HStack(
+                    // UIDropdownListView().placeHolder("Change Icon Category")
+                    //     .value("All Categories")
+                    //     .change(e => { })
+                    //     // .dataSource()
+                    //     .width("100px").fields({})
+                    // ,
+                    Views.SearchBar("Search Icons", value => this.Search("name", value))
+                ).height(),
                 ScrollView({ axes: cVertical })(
                     HStack({ alignment: cTop, spacing: 20 })(
                         ...ForEach(this.showingIcons)(icon =>

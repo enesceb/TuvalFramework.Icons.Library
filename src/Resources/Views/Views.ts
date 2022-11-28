@@ -6,7 +6,7 @@ export namespace Views {
     export const SearchBar = (text: string, action: Function) =>
     HStack({ spacing: 5 })(
         TextField().onTextChange((value) => action(value))
-            .fontSize(14).placeholder("Search Icons"),
+            .fontSize(14).placeholder(text),
         Icon(IconLibrary.Search).size(20)
     ).cursor("pointer")
         .marginTop("15px")
@@ -16,7 +16,6 @@ export namespace Views {
         .fontWeight("600")
         .padding("5px 10px")
         .cornerRadius(10)
-        .border({ default: "1px solid rgba(125,125,125,0.5)", hover: "1px solid darkgray" })
 }
 
 
